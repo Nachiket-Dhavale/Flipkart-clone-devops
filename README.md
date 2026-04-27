@@ -1,94 +1,199 @@
-# Flipkart - MERN
-Full-Stack Flipkart with Admin Dashboard & Paytm Payment Gateway.
+# Flipkart Clone — Full Stack MERN App
 
-[Visit Now](https://flipkartweb-mern.vercel.app) 🚀
+A full-stack e-commerce web application inspired by Flipkart, built with the MERN stack (MongoDB, Express, React, Node.js). Supports product listings, user authentication, cart, orders, and payment integration.
 
-## 🖥️ Tech Stack
-**Frontend:**
+---
 
-![reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)&nbsp;
-![react-router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)&nbsp;
-![redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)&nbsp;
-![tailwindcss](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)&nbsp;
-![mui](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)&nbsp;
-![chart-js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)&nbsp;
+## 🚀 Live Demo
 
-**Backend:**
+🌐 [flipkart-mern.azurewebsites.net](https://flipkart-mern.azurewebsites.net)
 
-![nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)&nbsp;
-![expressjs](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)&nbsp;
-![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)&nbsp;
-![jwt](	https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)&nbsp;
+---
 
-**Payment Gateway:**
+## 🛠️ Tech Stack
 
-![paytm](https://img.shields.io/badge/Paytm-002970?style=for-the-badge&logo=paytm&logoColor=00BAF2)
+**Frontend**
+- React.js
+- Redux + Redux Thunk
+- Material UI (MUI)
+- React Router DOM
+- Axios
+- Chart.js
 
-**Cloud Storage:** [Cloudinary](https://cloudinary.com/)
+**Backend**
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT Authentication
+- Cloudinary (image uploads)
+- Stripe & Paytm (payments)
+- SendGrid (emails)
 
-**Mail Service:** [Sendgrid](https://sendgrid.com/)
+**DevOps**
+- Docker
+- Azure Container Registry (ACR)
+- Azure App Service
+- GitHub Actions (CI/CD)
+- MongoDB Atlas
 
-## 🚀 Features
+---
 
-**User Account Management**
-- Login/Signup: 🚪 Users can create an account or log in to an existing one.
-- Update Profile/Password: 🔐 Users can update their profile information and change their passwords.
-  
-**Password Management**
-- Reset Password Mail: 📧 Utilizing Sendgrid, users can reset their passwords via email.
-  
-**Shopping Cart**
-- Add/Remove Items: 🛒 Users can add items to their shopping cart or remove them as needed.
-- Update Quantities: 🔢 Quantities of items in the cart can be adjusted.
-  
-**Saved Items**
-- Save For Later: 💾 Users can move items from the cart to a "Saved For Later" list or remove them from it.
-  
-**Wishlist**
-- Add/Remove Items: ❤️ Users can add items to their wishlist or remove them from it.
-  
-**Product Browsing**
-- Pagination: 📚 Products are paginated, with 12 products displayed per page by default.
-- Search: 🔍 Users can search for products.
-- Filters: 🎛️ Products can be filtered based on categories, ratings, and price range.
-  
-**Checkout Process**
-- Shipping Info: 🚚 Shipping information is stored in session storage for ease of checkout.
-- Payment Options: 💳 Users can pay through Paytm payment gateway for checkout.
-  
-**Order Management**
-- My Orders: 📦 Users can view their order history with various filters.
-- Order Details: ℹ️ Details of all ordered items are accessible.
-- Order Confirmation: ✉️ Users receive email notifications with comprehensive order details upon placing an order.
-  
-**Product Interaction**
-- Review Products: 🌟 Users can review products.
-  
-**Admin Features**
-- Dashboard: 🖥️ Admins have access to a dedicated dashboard.
-- Order Management: 📊 Admins can update order statuses and delete orders.
-- Product Management: 📝 Admins can add/update products.
-- User Management: 👥 Admins can update user data and delete users.
-- Review Management: 📜 Admins can view and delete product reviews.
-- Stock Management: 📉 Product stock is automatically decreased upon shipment.
+## 📁 Project Structure
 
-## Sneak Peek of Admin Dashboard 🙈 :
-![Capture](https://user-images.githubusercontent.com/64949957/153995268-0cb769b9-e0ee-48ea-83c1-09b881df4101.PNG)
+```
+flipkart-mern/
+├── backend/
+│   ├── config/          # Database & environment config
+│   ├── controllers/     # Route controllers
+│   ├── middlewares/     # Auth & error middlewares
+│   ├── models/          # Mongoose models
+│   ├── routes/          # API routes
+│   └── utils/           # Helper utilities
+├── frontend/            # React app
+├── .github/
+│   └── workflows/
+│       └── deploy.yml   # GitHub Actions CI/CD pipeline
+├── Dockerfile           # Production Docker image
+├── docker-compose.yml   # Local development setup
+├── server.js            # App entry point
+└── package.json
+```
 
-<table>
-  <tr>
-    <td><img src="https://user-images.githubusercontent.com/64949957/153995383-367cbcc0-cce5-4523-a999-b8d92e44d6ab.jpg" alt="mockup" /></td>
-    <td><img src="https://user-images.githubusercontent.com/64949957/153995406-45e36cbc-8d42-4416-b23a-08ad592e4ebc.jpg" alt="mockups" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://user-images.githubusercontent.com/64949957/153996560-bd631f30-46f0-4248-83b3-d8ce44a8f9e4.PNG" alt="mockup" /></td>
-    <td><img src="https://user-images.githubusercontent.com/64949957/153996577-57b1a82d-064a-49dc-9055-e2bceb854ab2.PNG" alt="mockups" /></td>
-  </tr>
-</table>
+---
 
-<h2>📬 Contact</h2>
+## ⚙️ Environment Variables
 
-Feel free to reach me through the below handles if you'd like to contact me.
+Create `backend/config/config.env` for local development:
 
-[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jigar-sablee)
-[![instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/jigarsable.dev)
+```env
+PORT=4000
+NODE_ENV=development
+
+# MongoDB
+MONGO_URI=mongodb://localhost:27017/flipkart
+
+# JWT
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRE=7d
+COOKIE_EXPIRE=5
+
+# Cloudinary
+CLOUDINARY_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+# Stripe
+STRIPE_API_KEY=your_stripe_key
+STRIPE_SECRET_KEY=your_stripe_secret
+
+# SendGrid
+SENDGRID_API_KEY=your_sendgrid_key
+```
+
+---
+
+## 🐳 Run Locally with Docker
+
+Make sure Docker Desktop is running, then:
+
+```bash
+docker-compose up --build
+```
+
+App will be live at **http://localhost:4000**
+
+To stop:
+```bash
+docker-compose down
+```
+
+---
+
+## 💻 Run Locally without Docker
+
+**Install dependencies:**
+```bash
+npm install
+cd frontend && npm install
+```
+
+**Run in development mode:**
+```bash
+npm run dev
+```
+
+This starts both the backend (port 4000) and frontend (port 3000) concurrently.
+
+---
+
+## 🌐 Deployment — Azure
+
+This app is deployed on **Azure App Service** using a Docker container stored in **Azure Container Registry**.
+
+### Manual Deployment Steps
+
+```bash
+# Login to Azure
+az login
+
+# Login to ACR
+az acr login --name flipkartregistry
+
+# Build and push image
+docker build -t flipkartregistry.azurecr.io/flipkart-mern:latest .
+docker push flipkartregistry.azurecr.io/flipkart-mern:latest
+
+# Restart web app
+az webapp restart --name flipkart-mern --resource-group flipkart-rg
+```
+
+---
+
+## 🔄 CI/CD Pipeline — GitHub Actions
+
+Every push to `main` automatically:
+1. Builds a fresh Docker image
+2. Pushes it to Azure Container Registry
+3. Deploys it to Azure App Service
+
+### Required GitHub Secrets
+
+| Secret | Description |
+|---|---|
+| `REGISTRY_LOGIN_SERVER` | `flipkartregistry.azurecr.io` |
+| `REGISTRY_USERNAME` | ACR username |
+| `REGISTRY_PASSWORD` | ACR password |
+| `AZURE_WEBAPP_NAME` | `flipkart-mern` |
+| `AZURE_PUBLISH_PROFILE` | Azure publish profile XML |
+
+---
+
+## 📦 API Routes
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/v1/register` | Register user |
+| POST | `/api/v1/login` | Login user |
+| GET | `/api/v1/products` | Get all products |
+| GET | `/api/v1/product/:id` | Get product details |
+| POST | `/api/v1/order/new` | Place new order |
+| GET | `/api/v1/orders/me` | Get my orders |
+| POST | `/api/v1/payment/process` | Process payment |
+
+---
+
+## 📸 Features
+
+- 🔐 User registration & login with JWT
+- 🛍️ Product listing with search & filters
+- 🛒 Add to cart & wishlist
+- 📦 Order placement & tracking
+- 💳 Payment via Stripe & Paytm
+- 🖼️ Product image upload via Cloudinary
+- 📊 Admin dashboard with charts
+- 📧 Email notifications via SendGrid
+
+---
+
+## 📄 This Flipkart-Mern stack project frontend and backend is done by https://github.com/jigar-sable/flipkart-mern.git
+
