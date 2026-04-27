@@ -1,0 +1,39 @@
+services:
+
+  mongo:
+    image: mongo:6.0.4
+    container_name: flipkart-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  app:
+    build: .
+    container_name: flipkart-mern
+    ports:
+      - "4000:4000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - MONGO_URI=mongodb://mongo:27017/flipkart
+      - JWT_SECRET=your_jwt_secret_here
+      - JWT_EXPIRE=7d
+      - COOKIE_EXPIRE=5
+      - CLOUDINARY_NAME=your_cloudinary_name
+      - CLOUDINARY_API_KEY=your_cloudinary_api_key
+      - CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
