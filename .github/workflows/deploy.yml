@@ -43,3 +43,11 @@ jobs:
         with:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
           images: ${{ secrets.REGISTRY_LOGIN_SERVER }}/flipkart-mern:latest
+
+      # Step 6 — Restart the app to pick up new image
+      - name: Restart Azure Web App
+        uses: azure/cli@v1
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az webapp restart --name ${{ secrets.AZURE_WEBAPP_NAME }} --resource-group flipkart-rg
