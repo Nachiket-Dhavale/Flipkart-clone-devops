@@ -10,6 +10,11 @@ A full-stack e-commerce web application inspired by Flipkart, built with the MER
 
 ---
 
+##  System design
+
+<img width="165" height="150" alt="image" src="https://github.com/user-attachments/assets/82c928aa-fe33-462f-9aa3-a75279ddc00f" />
+
+
 ## 🛠️ Tech Stack
 
 **Frontend**
